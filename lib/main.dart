@@ -1,4 +1,4 @@
-import 'package:KiericoBank/screens/dashboard.dart';
+import 'package:KiericoBank/screens/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(KiericoBankApp());
