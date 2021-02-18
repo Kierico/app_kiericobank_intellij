@@ -7,6 +7,7 @@ class KiericoBankApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: true,
       theme: ThemeData(
         primaryColor: Colors.purple[700], // cor primária.
         accentColor: Colors.purpleAccent[100], // cor secundária.
