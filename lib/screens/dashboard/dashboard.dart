@@ -1,4 +1,3 @@
-import 'package:KiericoBank/models/saldo.dart';
 import 'package:KiericoBank/screens/dashboard/saldo.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +10,7 @@ class Dashboard extends StatelessWidget {
       ),
       body: Align(
         alignment: Alignment.topCenter,
-        child: SaldoCard(Saldo(1000000.00)),
+        child: SaldoCard(),
       ),
     );
   }

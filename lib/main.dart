@@ -1,7 +1,15 @@
+import 'package:KiericoBank/models/saldo.dart';
 import 'package:KiericoBank/screens/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(KiericoBankApp());
+/* ChangeNotifierProvider = Proverdo de Notificações de Mudanças. */
+void main() => runApp(
+      ChangeNotifierProvider(
+        create: (context) => Saldo(0),
+        child: KiericoBankApp(),
+      ),
+    );
 
 class KiericoBankApp extends StatelessWidget {
   @override
