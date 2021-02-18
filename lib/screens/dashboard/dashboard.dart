@@ -1,5 +1,8 @@
+import 'package:KiericoBank/models/saldo.dart';
 import 'package:KiericoBank/screens/dashboard/saldo.dart';
+import 'package:KiericoBank/screens/deposito/formulario.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Dashboard extends StatelessWidget {
   @override
@@ -8,9 +11,24 @@ class Dashboard extends StatelessWidget {
       appBar: AppBar(
         title: const Text('LuBank'),
       ),
-      body: Align(
-        alignment: Alignment.topCenter,
-        child: SaldoCard(),
+      body: ListView(
+        children: <Widget>[
+          Align(
+            alignment: Alignment.topCenter,
+            child: SaldoCard(),
+          ),
+          RaisedButton(
+            child: Text('Receber Depósito'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return FormularioDeposito();
+                })
+              );
+            },
+          ),
+        ],
       ),
     );
   }
