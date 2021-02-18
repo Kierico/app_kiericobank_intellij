@@ -1,4 +1,4 @@
-import 'package:KiericoBank/screens/transferencia/lista.dart';
+import 'package:KiericoBank/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(KiericoBankApp());
@@ -17,7 +17,7 @@ class KiericoBankApp extends StatelessWidget {
           textTheme: ButtonTextTheme.primary,
         ),
       ),
-      home: ListaTransferencias(),
+      home: Dashboard(),
     );
   }
 }
