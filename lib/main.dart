@@ -3,7 +3,6 @@ import 'package:KiericoBank/screens/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-/* ChangeNotifierProvider = Proverdo de Notificações de Mudanças. */
 void main() => runApp(
       ChangeNotifierProvider(
         create: (context) => Saldo(0),
@@ -17,10 +16,9 @@ class KiericoBankApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: true,
       theme: ThemeData(
-        primaryColor: Colors.purple[700], // cor primária.
-        accentColor: Colors.purpleAccent[100], // cor secundária.
+        primaryColor: Colors.purple[700],
+        accentColor: Colors.purpleAccent[100],
         buttonTheme: ButtonThemeData(
-          // cor botão em tema, pq envolve o texto.
           buttonColor: Colors.purpleAccent[100],
           textTheme: ButtonTextTheme.primary,
         ),

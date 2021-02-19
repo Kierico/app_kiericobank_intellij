@@ -5,11 +5,9 @@ class Saldo extends ChangeNotifier {
 
   Saldo(this.valor);
 
-  /* Metodo que adiciona e muda esse valor. */
   void adiciona(double valor) {
     this.valor += valor;
 
-    /* avisa para tudo mundo o que esta sendo alterado. */
     notifyListeners();
 
   }

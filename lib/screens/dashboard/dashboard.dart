@@ -1,8 +1,6 @@
-import 'package:KiericoBank/models/saldo.dart';
 import 'package:KiericoBank/screens/dashboard/saldo.dart';
 import 'package:KiericoBank/screens/deposito/formulario.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class Dashboard extends StatelessWidget {
   @override
