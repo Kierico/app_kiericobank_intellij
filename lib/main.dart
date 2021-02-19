@@ -1,4 +1,5 @@
 import 'package:KiericoBank/models/saldo.dart';
+import 'package:KiericoBank/models/transferencias.dart';
 import 'package:KiericoBank/screens/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -9,7 +10,9 @@ void main() => runApp(
           ChangeNotifierProvider(
             create: (context) => Saldo(0),
           ),
-
+          ChangeNotifierProvider(
+            create: (context) => Transferencias(),
+          ),
         ],
         child: KiericoBankApp(),
       ),
