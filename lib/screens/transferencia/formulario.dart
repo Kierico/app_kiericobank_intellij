@@ -1,6 +1,9 @@
 import 'package:KiericoBank/components/editor.dart';
+import 'package:KiericoBank/models/saldo.dart';
 import 'package:KiericoBank/models/transferencia.dart';
+import 'package:KiericoBank/models/transferencias.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 const _tituloAppBar = 'Criando Transferência';
 const _rotuloCampoNumeroConta = 'Número da Conta';
@@ -9,16 +12,10 @@ const _rotuloCampoValor = 'Valor';
 const _dicaCampoValor = '0.00';
 const _textBotaoConfirmar = 'Confirmar';
 
-class FormularioTransferencia extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return FormularioTransferenciaState();
-  }
-}
+class FormularioTransferencia extends StatelessWidget {
 
-class FormularioTransferenciaState extends State<FormularioTransferencia> {
   final TextEditingController _controladorCampoNumeroConta =
-  TextEditingController();
+      TextEditingController();
   final TextEditingController _controladorCampoValor = TextEditingController();
 
   @override
@@ -54,11 +51,31 @@ class FormularioTransferenciaState extends State<FormularioTransferencia> {
   }
 
   void _criaTransferencia(BuildContext context) {
+
     final int numeroConta = int.tryParse(_controladorCampoNumeroConta.text);
     final double valor = double.tryParse(_controladorCampoValor.text);
-    if (numeroConta != null && valor != null) {
-      final transferenciaCriada = Transferencia(numeroConta, valor);
-      Navigator.pop(context, transferenciaCriada);
+    final transferenciaValida = _validaTransferencia(numeroConta, valor);
+
+    if (transferenciaValida) {
+
+      final novaTransferencia = Transferencia(numeroConta, valor);
+
+      _atualizaEstado(context, novaTransferencia, valor);
+
+      Navigator.pop(context);
     }
+  }
+
+  _validaTransferencia(numeroConta, valor) {
+
+    final _camposPreenchidos = numeroConta != null && valor != null;
+
+    return _camposPreenchidos;
+  }
+
+  _atualizaEstado(context, novaTransferencia, valor) {
+    Provider.of<Transferencias>(context, listen: false)
+        .adiciona(novaTransferencia);
+    Provider.of<Saldo>(context, listen: false).subtrai(valor);
   }
 }
