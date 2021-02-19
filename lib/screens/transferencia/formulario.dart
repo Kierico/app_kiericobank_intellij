@@ -74,8 +74,13 @@ class FormularioTransferencia extends StatelessWidget {
   }
 
   _atualizaEstado(context, novaTransferencia, valor) {
-    Provider.of<Transferencias>(context, listen: false)
-        .adiciona(novaTransferencia);
-    Provider.of<Saldo>(context, listen: false).subtrai(valor);
+    Provider.of<Transferencias>(
+      context,
+      listen: false,
+    ).adiciona(novaTransferencia);
+    Provider.of<Saldo>(
+      context,
+      listen: false,
+    ).subtrai(valor);
   }
 }
