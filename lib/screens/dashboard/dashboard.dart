@@ -1,7 +1,6 @@
 import 'package:KiericoBank/screens/dashboard/saldo.dart';
 import 'package:KiericoBank/screens/deposito/formulario.dart';
 import 'package:KiericoBank/screens/transferencia/formulario.dart';
-import 'package:KiericoBank/screens/transferencia/lista.dart';
 import 'package:KiericoBank/screens/transferencia/ultimas.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +9,7 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('LuBank'),
+        title: const Text('KiericoBank'),
       ),
       body: ListView(
         children: <Widget>[
