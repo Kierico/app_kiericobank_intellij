@@ -39,7 +39,7 @@ class UltimasTransferencias extends StatelessWidget {
           );
         }),
         RaisedButton(
-          child: Text('Ver todas Transferências'),
+          child: Text('Ver todas as Transferências'),
           onPressed: () {
             Navigator.push(
               context,
